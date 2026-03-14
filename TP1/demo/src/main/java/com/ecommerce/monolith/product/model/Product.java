@@ -1,5 +1,6 @@
 package com.ecommerce.monolith.product.model;
 
+import com.ecommerce.monolith.category.model.Category;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
@@ -33,4 +34,8 @@ public class Product {
     @PositiveOrZero(message = "Stock cannot be negative")
     @Column(nullable = false)
     private Integer stock;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 }

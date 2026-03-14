@@ -30,6 +30,7 @@ public class ProductService {
         product.setDescription(details.getDescription());
         product.setPrice(details.getPrice());
         product.setStock(details.getStock());
+        product.setCategory(details.getCategory());
         return product;
     }
 

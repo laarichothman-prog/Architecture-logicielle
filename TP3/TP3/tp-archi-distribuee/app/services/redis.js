@@ -1,0 +1,9 @@
+// app/services/redis.js
+const Redis = require('ioredis');
+
+const redis = new Redis({ host: 'redis', port: 6379 });
+
+redis.on('connect', () => console.log('✅ Redis connecté'));
+redis.on('error', (err) => console.error('❌ Redis erreur:', err));
+
+module.exports = redis;
